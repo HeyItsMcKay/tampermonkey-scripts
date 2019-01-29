@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ZywieTweaks JS
-// @version      1.0
+// @version      1.1
 // @description  Make some of the actions on the website I use at work more poweruser friendly (Keyboard commands are our friends)
 // @author       McKay
 // @match        *://app.zywie.net/tech*
@@ -18,8 +18,9 @@
         //Stop any loops that might be going
         clearInterval(findOffsetInterval);
         clearInterval(findAddBeat);
-        //And forget which type of ecg page we were on
+        //And forget which type of ecg page we were on and the last add beat bar
         ecgArea = undefined;
+        addBeatToClick = undefined;
         //If we're on an ECG page then start the process back up
         if(eventPage.test(location.hash)) foundEvent();
     })
